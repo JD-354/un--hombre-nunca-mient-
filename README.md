@@ -384,7 +384,7 @@
 
             <div class="profile-img">
 
-                <img src="./hn.jpg" alt="Foto de Perfil">
+                <img src="./hn.jpg" alt="./hn.jpg">
 
             </div>
 
