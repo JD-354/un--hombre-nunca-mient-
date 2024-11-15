@@ -1,4 +1,52 @@
-  6s ease-in-out infinite;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes sin Límites</title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(45deg, #000000, #003300);
+            color: white;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
         }
 
         h1 {
@@ -189,10 +237,11 @@
         </div>
         <div class="servicio">
         <div class="servicios">
+
             <div class="servicio">
                 <h3>Tutoría Personalizada</h3>
-                        <p>Apoyo individual adaptado a tus necesidades específicas en todas las materias.</p><button onclick="openModal('otros apoyos')" class="btn"><a href="./tutorias per.html" class="cta-button"> tutoria  </a>
-            </div>
+                        <p>Apoyo individual adaptado a tus necesidades específicas en todas las materias.</p><button onclick="openModal('otros apoyos')" class="btn">totoriar.</button><a href="./tutorias per.html" class="button"> .tutorial  </a> 
+                        </div>
             <div class="servicio">🧠
                 <h3>Apoyo Psicoeducativo</h3>
                 <p>Orientación para superar bloqueos y desarrollar habilidades de aprendizaje.</p>   <button onclick="openModal('otros apoyos')" class="btn">Ver</button>
@@ -225,8 +274,7 @@
                 <input type="text" placeholder="Nombre completo" required>
                 <input type="email" placeholder="Correo electrónico" required>
                 <textarea placeholder="Cuéntanos sobre tus necesidades académicas" rows="5" required></textarea>
-                <button type="submit" class="btn"> <a href="file:///C:/Users/LENOVO/Downloads/R.JD/JD/estudiantes%201.html"class="cta-button">"Enviar Mensaje
-                </a>
+                <button type="submit" class="btn"
             </section>
             </form>
         </div>
@@ -361,4 +409,42 @@
             }
 
             draw() {
+                ctx.fillStyle = '#00ff00';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
 
+        function init() {
+            for (let i = 0; i < 100; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let particle of particles) {
+                particle.update();
+                particle.draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        // Funciones para los modales
+        function openModal(type) {
+            document.getElementById(modal-$,{type}).style.display = 'flex';
+        }
+
+        function closeModal(type) {
+            document.getElementById(modal-$,{type}).style.display = 'none';
+        }
+
+        
+        </script>
+
+</body>
+</html>
