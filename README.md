@@ -1,6 +1,6 @@
-<!DOCTYPE html>
+
 <html lang="en">
-<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Estudiantes sin Límites</title>
@@ -274,13 +274,7 @@
                 <input type="text" placeholder="Nombre completo" required>
                 <input type="email" placeholder="Correo electrónico" required>
                 <textarea placeholder="Cuéntanos sobre tus necesidades académicas" rows="5" required></textarea>
-                <button type="submit" class="btn"
-            </section>
-            </form>
-        </div>
-    </div>
-
-    <body>
+                
     <div id="modal-tutoria" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('tutoria')">&times;</span>
