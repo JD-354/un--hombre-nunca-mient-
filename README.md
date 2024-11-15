@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Estudiantes sin Límites</title>
 </head>
 <body>
-    
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -57,14 +56,14 @@
             margin-bottom: 20px;
         }
 
-        .materia {
+        .servicios {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
         }
 
-        .materia {
+        .servicio {
             background: rgba(0, 51, 0, 0.7);
             padding: 25px;
             border-radius: 15px;
@@ -73,12 +72,12 @@
             box-shadow: 0 5px 15px rgba(0, 255, 0, 0.1);
         }
 
-        .materia:hover {
+        .servicio:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 255, 0, 0.2);
         }
 
-        .materia h2 {
+        .servicio h3 {
             color: #00ff00;
             margin-bottom: 15px;
         }
@@ -117,7 +116,7 @@
             color: white;
         }
 
-        .servicios {
+        .modal {
             display: none;
             position: fixed;
             top: 0;
@@ -130,7 +129,7 @@
             align-items: center;
         }
 
-        .servicios {
+        .modal-content {
             background: linear-gradient(45deg, #001a00, #003300);
             padding: 30px;
             border-radius: 15px;
@@ -208,31 +207,102 @@
     <canvas class="particles"></canvas>
     <div class="container">
         <header>
+            <h1>Estudiantes sin Límites</h1>
+            <h1>Potencia tu Rendimiento Académico</h1>
+                    <h1>Descubre tu máximo potencial con nuestro programa de apoyo integral</h1>
+                    
+            
+            
+            <p>Transformando el futuro académico, un estudiante a la vez</p>
 
-    <div id="modal-tutoria" class="materia">
+        </header>
+
+        <div class="estadisticas">
+            <div class="estadistica">
+                <div class="numero">500+</div>
+                <p>Estudiantes Ayudados</p>
+            </div>
+            <div class="estadistica">
+                <div class="numero">95%</div>
+                <p>Tasa de Mejora</p>
+            </div>
+            <div class="estadistica">
+                <div class="numero">50+</div>
+                <p>Tutores Expertos</p>
+            </div>
+            <div class="estadistica">
+                <div class="numero">8</div>
+                <p>Años de Experiencia</p>
+            </div>
+        </div>
+        <div class="servicio">
+        <div class="servicios">
+
+            <div class="servicio">
+                <h3>Tutoría Personalizada</h3>
+                        <p>Apoyo individual adaptado a tus necesidades específicas en todas las materias.</p><button onclick="openModal('otros apoyos')" class="btn">totoriar.</button><a href="./tutorias per.html" class="button"> .tutorial  </a> 
+                        </div>
+            <div class="servicio">🧠
+                <h3>Apoyo Psicoeducativo</h3>
+                <p>Orientación para superar bloqueos y desarrollar habilidades de aprendizaje.</p>   <button onclick="openModal('otros apoyos')" class="btn">Ver</button>
+            </div>
+            <div class="servicio">
+                <h3>Talleres de Estudio</h3>
+                <p>Aprende técnicas efectivas de estudio, gestión del tiempo y organización para mejorar tu rendimiento académico.</p>
+                <button onclick="openModal('talleres')" class="btn">Inscríbete Ahora</button>
+            </div>
+            <div class="servicio">
+                <h3>Apoyo </h3>
+                <p>Asesoramiento profesional para superar bloqueos de aprendizaje y desarrollar una mentalidad positiva.</p>
+                <button onclick="openModal('apoyo')" class="btn">Consulta Gratis</button>
+            </div>
+            <div class="servicio">🎯
+                        <h3>Técnicas de Estudio</h3>
+                        <p>Aprende métodos efectivos para mejorar tu comprensión y retención.</p>
+        </div>
+        <div class="servicio">
+        <h3>Tutoría unico</h3>
+                        <p>Apoyo individual adaptado a tus necesidades específicas en todas las materias.</p><button onclick="openModal('otros apoyos')" class="btn">tutoria</button>
+                    </di>
+
+          </div>  
+
+        <div class="formulario">
+            <section class="hero" >
+            <h2>¿Necesitas ayuda? ¡Contáctanos!</h2>
+            <form onsubmit="return handleSubmit(event)">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Correo electrónico" required>
+                <textarea placeholder="Cuéntanos sobre tus necesidades académicas" rows="5" required></textarea>
+                <button type="submit" class="btn"
+            </section>
+            </form>
+        </div>
+    </div>
+
+    <body>
+    <div id="modal-tutoria" class="modal">
         <div class="modal-content">
-            <span class="materia" onclick="closeModal('tutoria')">&times;</span>
-            <h1>Programa de Tutoría Personalizada</h1>
-            <h1>Materias Disponibles:</h1>
-            </header>
-
-            <div class="materia">
-                <h2>Matemáticas</h2>
-                    <p>Algebra, cálculo, Geometría</p><button onclick="openModal('otros apoyos')" class="btn">comenzar classes</button>
-                    </div>
+            <span class="close-modal" onclick="closeModal('tutoria')">&times;</span>
+            <h2>Programa de Tutoría Personalizada</h2>
+            <h3>Materias Disponibles:</h3>
+            <div class="materias-grid">
                 <div class="materia">
-                    <h2>Ciencias</h2>
-                    <p>Física, Química, Biología</p><button onclick="openModal('otros apoyos')" class="btn">comenzar classes</button>
+                    <h4>Matemáticas</h4>
+                    <p>Álgebra, Cálculo, Geometría</p>
                 </div>
                 <div class="materia">
-                    <h2>Lenguaje</h2>
-                    <p>Comprensión, Redacción</p><button onclick="openModal('otros apoyos')" class="btn">comenzar classes</button>
+                    <h4>Ciencias</h4>
+                    <p>Física, Química, Biología</p>
                 </div>
                 <div class="materia">
-                    <h2>Inglés</h2>
-                    <p>Todos los niveles</p><button onclick="openModal('otros apoyos')" class="btn">comenzar classes</button>
+                    <h4>Lenguaje</h4>
+                    <p>Comprensión, Redacción</p>
                 </div>
-                
+                <div class="materia">
+                    <h4>Inglés</h4>
+                    <p>Todos los niveles</p>
+                </div>
             </div>
             <p style="margin-top: 20px;">Metodología:</p>
             <ul style="margin-left: 20px;">
@@ -243,6 +313,73 @@
             </ul>
         </div>
     </div>
+</body>
+    <div id="modal-talleres" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('talleres')">&times;</span>
+            <h2>Talleres de Estudio</h2>
+            <h3>Próximos Talleres:</h3>
+            <div class="materias-grid">
+                <div class="materia">
+                    <h4>Técnicas de Estudio</h4>
+                    <p>Duración: 4 semanas</p>
+                </div>
+                <div class="materia">
+                    <h4>Gestión del Tiempo</h4>
+                    <p>Duración: 2 semanas</p>
+                </div>
+                <div class="materia">
+                    <h4>Preparación de Exámenes</h4>
+                    <p>Duración: 3 semanas</p>
+                </div>
+                <div class="materia">
+                    <h4>Memoria y Concentración</h4>
+                    <p>Duración: 2 semanas</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px;">Beneficios:</p>
+            <ul style="margin-left: 20px;">
+                <li>Grupos reducidos</li>
+                <li>Material didáctico incluido</li>
+                <li>Certificado de participación</li>
+                <li>Seguimiento post-taller</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-apoyo" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('apoyo')">&times;</span>
+            <h2>Apoyo Psicoeducativo</h2>
+            <h3>Servicios Disponibles:</h3>
+            <div class="materias-grid">
+                <div class="materia">
+                    <h4>Diagnóstico</h4>
+                    <p>Evaluación inicial</p>
+                </div>
+                <div class="materia">
+                    <h4>Orientación</h4>
+                    <p>Plan personalizado</p>
+                </div>
+                <div class="materia">
+                    <h4>Seguimiento</h4>
+                    <p>Apoyo continuo</p>
+                </div>
+                <div class="materia">
+                    <h4>Familia</h4>
+                    <p>Orientación familiar</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px;">Áreas de apoyo:</p>
+            <ul style="margin-left: 20px;">
+                <li>Ansiedad académica</li>
+                <li>Motivación escolar</li>
+                <li>Hábitos de estudio</li>
+                <li>Autoestima académica</li>
+            </ul>
+        </div>
+    </div>
+
     <script>
         // Código de partículas (mantener el mismo)
         const canvas = document.querySelector('.particles');
@@ -309,6 +446,6 @@
         
         </script>
 
-
 </body>
 </html>
+           
